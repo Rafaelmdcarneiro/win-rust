@@ -1,0 +1,25 @@
+--in crates/libs/bindgen/default
+--out crates/libs/windows/src/lib.rs
+--config package no-bindgen-comment
+--config prepend:Windows.Win32.Foundation.WIN32_ERROR=#[must_use]
+--config prepend:Windows.Win32.Foundation.BOOL=#[must_use]
+--config prepend:Windows.Win32.Foundation.NTSTATUS=#[must_use]
+--config prepend:Windows.Win32.System.Rpc.RPC_STATUS=#[must_use]
+
+--filter
+    Windows
+    !Windows.AI.MachineLearning.Preview
+    !Windows.ApplicationModel.SocialInfo
+    !Windows.ApplicationModel.Store
+    !Windows.Devices.AllJoyn
+    !Windows.Devices.Perception
+    !Windows.Security.Authentication.Identity.Provider
+    !Windows.Services.Cortana
+    !Windows.System.Power.Diagnostics
+    !Windows.System.Preview
+    !Windows.UI.Xaml
+    !Windows.Win32.Foundation.Metadata
+    !Windows.Win32.System.Diagnostics.Debug.WebApp
+    !Windows.Win32.System.WinRT.Xaml
+    !Windows.Win32.UI.Xaml
+    !Windows.Win32.Web.MsHtml
