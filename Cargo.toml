@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/libs/*",
+    "crates/samples/windows-sys/*",
+    "crates/samples/windows/*",
+    "crates/samples/components/*",
+    "crates/targets/*",
+    "crates/tests/*",
+    "crates/tools/*",
+]
+exclude = [
+    "crates/targets/baseline",
+]
+
+[workspace.lints.rust]
+rust_2018_idioms = { level = "warn", priority = -1 }
+unused_qualifications = "warn"
+missing_docs = "warn"
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(windows_raw_dylib, windows_debugger_visualizer)'] }
